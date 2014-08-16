@@ -1290,6 +1290,11 @@
 			if (i === -1)
 				return;
 
+			if ( new_date.getUTCFullYear() < 1000 ) {
+				delete this.updating;
+				return;
+			}
+
 			$.each(this.pickers, function(i, p){
 				if (!p.getUTCDate())
 					p.setUTCDate(new_date);
